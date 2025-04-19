@@ -157,4 +157,4 @@ def predict_return(request: PredictionRequest):
         raise HTTPException(status_code=400, detail=str(ve))
     except Exception as e:
         logger.exception("Unhandled exception during prediction")
-        raise HTTPException(status_code=500, detail="Internal Server Error")
+        raise HTTPException(status_code=500, detail="Internal Server Error")
