@@ -216,6 +216,14 @@ def assess_risk(predicted_return: float) -> str:
         return "Low Gain or Neutral (Low Risk)"
     else:
         return "Potential Loss (High Risk)"
+@app.get("/")
+def read_root():
+    return {
+        "message": "Welcome to the Stock Return Predictor API 🚀",
+        "endpoints": {
+            "POST /predict": "Send a ticker, investment amount, and investment days to get a return prediction."
+        }
+    }
 
 @app.post("/predict")
 def predict_return(request: PredictionRequest):
